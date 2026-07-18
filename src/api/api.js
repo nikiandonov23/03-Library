@@ -1,5 +1,5 @@
 export const settings = {
-    host: '',
+    host: 'https://zero3-library-backend-3uo9.onrender.com',
 };
 
 async function request(url, options) {
