@@ -1,0 +1,35 @@
+
+
+name: CI/CD 03-Library App
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build_and_test:
+
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Step name:Chene the repository
+      uses: actions/checkout@v5
+      
+    - name: Step name:Use of the Node.js 
+      uses: actions/setup-node@v5
+      with:
+        node-version: 20
+
+    - name: Step name:Installing of the dependancies    
+      run: npm install
+      
+    - name: Step name:Start the backend
+      run: node server.js &
+      
+    - name: Step name:Run the tests
+      run: npm test
+ 
+          
