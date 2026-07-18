@@ -41,3 +41,13 @@ jobs:
     # 5. Пускаме тестовете
     - name: Run the tests
       run: npm test
+  deploy:
+    needs: build_and_test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' 
+    steps:
+      - name: Deploy BACKEND to Render
+        uses: johnbeynon/render-deploy-action@v0.0.8
+        with:
+          service-id: ${{ secrets.SERVICE_ID_BACKEND}}
+          api-key: ${{ secrets.API_KEY_BACKEND}}
