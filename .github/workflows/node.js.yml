@@ -30,7 +30,7 @@ jobs:
       run: node server.js &
 
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      uses: microsoft/playwright-actions@v1
       
     - name: Step name:Run the tests
       run: npm test
