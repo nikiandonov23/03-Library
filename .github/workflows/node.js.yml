@@ -12,7 +12,7 @@ jobs:
   build_and_test:
 
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Step name:Chene the repository
@@ -30,7 +30,7 @@ jobs:
       run: node server.js &
 
     - name: Install Playwright Browsers
-      uses: microsoft/playwright-actions@v1
+      run: npx playwright install --with-deps
       
     - name: Step name:Run the tests
       run: npm test
