@@ -28,6 +28,9 @@ jobs:
       
     - name: Step name:Start the backend
       run: node server.js &
+      
+    - name: Wait for server to start
+      run: sleep 5
 
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
